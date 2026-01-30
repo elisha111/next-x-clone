@@ -3,9 +3,11 @@ import type { PropsWithChildren } from "react";
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
   return (
-    <div>
+    <div className="min-h-screen">
       <Header />
-      {children}
+      <div className="w-full max-w-xl flex justify-center px-4 py-8">
+        {children}
+      </div>
     </div>
   );
 }
