@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
+import { ProfileFake } from "./ProfileFake";
+
+export const metadata: Metadata = {
+  title: "ProfileFake",
+};
+
 export default function ProfileFakePage() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold mb-6">ProfileFakePage</h1>
-    </div>
-  );
+  return <ProfileFake />;
 }
