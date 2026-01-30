@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Test",
-};
-
 interface SearchParams {
   username?: string;
 }
 
 interface PageProps {
   params: Promise<SearchParams>;
+}
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const { params } = props;
+
+  return {
+    title: "@" + (await params).username,
+  };
 }
 
 export default async function TestPage(props: PageProps) {
